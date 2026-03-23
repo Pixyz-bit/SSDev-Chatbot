@@ -120,6 +120,10 @@
     }
 
     function ChatInput({ chatMessages, setChatMessages }) { //2nd Children of App()
+    /*function ChatInput(props) {
+    const chatMessages = props.chatMessages;
+    const setChatMessages = props.setChatMessages;
+    } */
       const [inputText, setInputText] = React.useState(''); //[Current Data, Updater Function]
       const [isLoading, setIsLoading] = React.useState(false);
       async function sendMessage() { //Asynchronous (async) code lets a program start an operation that takes time without blocking the main thread. This keeps apps responsive.
@@ -184,7 +188,7 @@
     }
 
     function ChatMessages({ chatMessages }) { //const chatMessages = props.chatMessages
-      const chatMessagesRef = useAutoScroll([chatMessages]); 
+      const chatMessagesRef = useAutoScroll([chatMessages]);
       return (
         <div className="chat-messages-container"
           ref={chatMessagesRef}>
